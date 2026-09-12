@@ -23,5 +23,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('clients', App\Http\Controllers\ClientController::class)->only(['index', 'create', 'store', 'edit', 'update']);
     Route::resource('services', App\Http\Controllers\ServiceController::class)->only(['index', 'create', 'store', 'edit', 'update']);
 });
+Route::resource('appointments', App\Http\Controllers\AppointmentController::class)->only(['index', 'create', 'store']);
+Route::patch('appointments/{appointment}/status', [App\Http\Controllers\AppointmentController::class, 'updateStatus'])->name('appointments.status');
 
 require __DIR__.'/auth.php';

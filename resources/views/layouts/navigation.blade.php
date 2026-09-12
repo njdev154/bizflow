@@ -20,6 +20,10 @@
    class="text-sm font-medium {{ request()->routeIs('services.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
     Services
 </a>
+<a href="{{ route('appointments.index') }}"
+   class="text-sm font-medium {{ request()->routeIs('appointments.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Rendez-vous
+</a>
                 </div>
             </div>
 
@@ -78,6 +82,11 @@
    class="text-sm font-medium {{ request()->routeIs('services.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
     Services
 </a>
+<a href="{{ route('appointments.index') }}"
+   class="text-sm font-medium {{ request()->routeIs('appointments.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Rendez-vous
+</a>
+
         </div>
 
         <div class="pt-4 pb-3 border-t border-border px-4">
@@ -96,6 +105,10 @@
 <a href="{{ route('services.index') }}"
    class="text-sm font-medium {{ request()->routeIs('services.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
     Services
+</a>
+<a href="{{ route('appointments.index') }}"
+   class="text-sm font-medium {{ request()->routeIs('appointments.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Rendez-vous
 </a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
