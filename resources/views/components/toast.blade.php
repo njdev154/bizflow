@@ -26,7 +26,7 @@
         x-transition:leave="transition ease-in duration-200"
         x-transition:leave-start="opacity-100 translate-y-0"
         x-transition:leave-end="opacity-0 -translate-y-2"
-        class="fixed top-6 right-6 z-50"
+        class="fixed top-6 left-1/2 -translate-x-1/2 z-50"
         style="display: none;"
     >
         <div class="flex items-center gap-3 bg-surface border border-border rounded-xl shadow-lg px-4 py-3 max-w-sm">

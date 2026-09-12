@@ -24,6 +24,7 @@
                         <th class="text-left px-4 py-3">Téléphone</th>
                         <th class="text-left px-4 py-3">Email</th>
                         <th class="text-left px-4 py-3">Ajouté le</th>
+                        <th class="text-right px-4 py-3"></th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-border">
@@ -33,6 +34,9 @@
                             <td class="px-4 py-3 text-muted">{{ $client->phone ?? '—' }}</td>
                             <td class="px-4 py-3 text-muted">{{ $client->email ?? '—' }}</td>
                             <td class="px-4 py-3 text-muted">{{ $client->created_at->format('d/m/Y') }}</td>
+                            <td class="px-4 py-3 text-right">
+                                <a href="{{ route('clients.edit', $client) }}" class="text-accent font-semibold hover:underline">Modifier</a>
+                            </td>
                         </tr>
                     @empty
                         <tr>

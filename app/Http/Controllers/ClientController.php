@@ -26,7 +26,7 @@ class ClientController extends Controller
                 ->orderBy('full_name')
                 ->paginate(10)
                 ->withQueryString()
-            : Client::whereRaw('1 = 0')->paginate(10); // aucune entreprise => liste vide, jamais d'erreur
+            : Client::whereRaw('1 = 0')->paginate(10);
 
         return view('clients.index', [
             'clients' => $clients,
@@ -55,5 +55,39 @@ class ClientController extends Controller
         $organization->clients()->create($validated);
 
         return redirect()->route('clients.index')->with('status', 'Client ajouté avec succès.');
+    }
+
+    public function edit(Request $request, Client $client): View
+    {
+        $this->authorizeClientBelongsToUser($request, $client);
+
+        return view('clients.edit', ['client' => $client]);
+    }
+
+    public function update(Request $request, Client $client): RedirectResponse
+    {
+        $this->authorizeClientBelongsToUser($request, $client);
+
+        $validated = $request->validate([
+            'full_name' => ['required', 'string', 'max:255'],
+            'phone' => ['nullable', 'string', 'max:30'],
+            'email' => ['nullable', 'email', 'max:255'],
+            'notes' => ['nullable', 'string', 'max:2000'],
+        ]);
+
+        $client->update($validated);
+
+        return redirect()->route('clients.index')->with('status', 'Client modifié avec succès.');
+    }
+
+    /**
+     * Empêche un utilisateur de modifier le client d'une autre entreprise,
+     * même en devinant/modifiant l'URL (ex: /clients/17/edit).
+     */
+    protected function authorizeClientBelongsToUser(Request $request, Client $client): void
+    {
+        $organization = $request->user()->currentOrganization();
+
+        abort_if(!$organization || $client->organization_id !== $organization->id, 403);
     }
 }
