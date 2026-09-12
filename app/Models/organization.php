@@ -22,5 +22,10 @@ class Organization extends Model
         return $this->belongsToMany(User::class, 'memberships')
             ->withPivot('role')
             ->withTimestamps();
+            
     }
+    public function clients(): HasMany
+{
+    return $this->hasMany(Client::class);
+}
 }
