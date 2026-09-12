@@ -16,6 +16,10 @@
    class="text-sm font-medium {{ request()->routeIs('clients.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
     Clients
 </a>
+<a href="{{ route('services.index') }}"
+   class="text-sm font-medium {{ request()->routeIs('services.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Services
+</a>
                 </div>
             </div>
 
@@ -70,6 +74,10 @@
    class="text-sm font-medium {{ request()->routeIs('clients.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
     Clients
 </a>
+<a href="{{ route('services.index') }}"
+   class="text-sm font-medium {{ request()->routeIs('services.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Services
+</a>
         </div>
 
         <div class="pt-4 pb-3 border-t border-border px-4">
@@ -84,6 +92,10 @@
 <a href="{{ route('clients.index') }}"
    class="text-sm font-medium {{ request()->routeIs('clients.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
     Clients
+</a>
+<a href="{{ route('services.index') }}"
+   class="text-sm font-medium {{ request()->routeIs('services.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Services
 </a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

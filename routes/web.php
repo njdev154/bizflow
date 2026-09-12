@@ -19,5 +19,9 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
    Route::resource('clients', App\Http\Controllers\ClientController::class)->only(['index', 'create', 'store', 'edit', 'update']);
 });
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resource('clients', App\Http\Controllers\ClientController::class)->only(['index', 'create', 'store', 'edit', 'update']);
+    Route::resource('services', App\Http\Controllers\ServiceController::class)->only(['index', 'create', 'store', 'edit', 'update']);
+});
 
 require __DIR__.'/auth.php';
