@@ -8,10 +8,14 @@
                 </a>
 
                 <div class="hidden sm:flex sm:space-x-6">
-                    <a href="{{ route('dashboard') }}"
-                       class="text-sm font-medium {{ request()->routeIs('dashboard') ? 'text-accent' : 'text-muted hover:text-ink' }}">
-                        Tableau de bord
-                    </a>
+                      <a href="{{ route('dashboard') }}"
+   class="text-sm font-medium {{ request()->routeIs('dashboard') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Tableau de bord
+</a>
+<a href="{{ route('clients.index') }}"
+   class="text-sm font-medium {{ request()->routeIs('clients.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Clients
+</a>
                 </div>
             </div>
 
@@ -58,9 +62,14 @@
 
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden border-t border-border">
         <div class="pt-2 pb-3 space-y-1 px-4">
-            <a href="{{ route('dashboard') }}" class="block py-2 text-sm font-medium {{ request()->routeIs('dashboard') ? 'text-accent' : 'text-muted' }}">
-                Tableau de bord
-            </a>
+            <a href="{{ route('dashboard') }}"
+   class="text-sm font-medium {{ request()->routeIs('dashboard') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Tableau de bord
+</a>
+<a href="{{ route('clients.index') }}"
+   class="text-sm font-medium {{ request()->routeIs('clients.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Clients
+</a>
         </div>
 
         <div class="pt-4 pb-3 border-t border-border px-4">
@@ -68,7 +77,14 @@
             <div class="text-sm text-muted">{{ Auth::user()->email }}</div>
 
             <div class="mt-3 space-y-1">
-                <a href="{{ route('profile.edit') }}" class="block py-2 text-sm text-muted">Mon profil</a>
+                <a href="{{ route('dashboard') }}"
+   class="text-sm font-medium {{ request()->routeIs('dashboard') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Tableau de bord
+</a>
+<a href="{{ route('clients.index') }}"
+   class="text-sm font-medium {{ request()->routeIs('clients.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Clients
+</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="block py-2 text-sm text-muted">Se déconnecter</button>

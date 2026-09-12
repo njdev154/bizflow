@@ -15,6 +15,7 @@
     <body class="font-sans text-ink antialiased">
         <div class="min-h-screen bg-background">
             @include('layouts.navigation')
+            <x-toast />
 
             @isset($header)
                 <header class="bg-surface border-b border-border">
