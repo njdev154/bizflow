@@ -43,4 +43,8 @@ class User extends Authenticatable
             ->withPivot('role')
             ->withTimestamps();
     }
+    public function currentOrganization(): ?Organization
+{
+    return $this->organizations()->first();
+}
 }
