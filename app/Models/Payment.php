@@ -4,19 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Appointment extends Model
+class Payment extends Model
 {
     protected $fillable = [
-        'organization_id', 'client_id', 'service_id',
-        'scheduled_at', 'duration_minutes', 'status', 'notes',
+        'organization_id', 'client_id', 'appointment_id',
+        'amount', 'method', 'status', 'paid_at',
     ];
 
     protected function casts(): array
     {
         return [
-            'scheduled_at' => 'datetime',
+            'amount' => 'decimal:2',
+            'paid_at' => 'datetime',
         ];
     }
 
@@ -30,12 +30,8 @@ class Appointment extends Model
         return $this->belongsTo(Client::class);
     }
 
-    public function service(): BelongsTo
+    public function appointment(): BelongsTo
     {
-        return $this->belongsTo(Service::class);
+        return $this->belongsTo(Appointment::class);
     }
-    public function payment(): HasOne
-{
-    return $this->hasOne(Payment::class);
-}
 }
