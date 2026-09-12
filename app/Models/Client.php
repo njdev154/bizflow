@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Client extends Model
 {
@@ -22,4 +23,8 @@ class Client extends Model
     {
         return $this->belongsTo(Organization::class);
     }
+    public function appointments(): HasMany
+{
+    return $this->hasMany(Appointment::class);
+}
 }
