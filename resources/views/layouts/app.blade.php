@@ -13,21 +13,29 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-ink antialiased">
-        <div class="min-h-screen bg-background">
-            @include('layouts.navigation')
-            <x-toast />
+        <div class="min-h-screen grid grid-cols-1 sm:grid-cols-[76px_1fr] lg:grid-cols-[250px_1fr] bg-background">
 
-            @isset($header)
-                <header class="bg-surface border-b border-border">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+            @include('layouts.sidebar')
 
-            <main>
-                {{ $slot }}
-            </main>
+            <div class="flex flex-col min-w-0">
+                @include('layouts.topbar')
+                <x-toast />
+
+                @isset($header)
+                    <header class="bg-surface border-b border-border">
+                        <div class="py-6 px-4 sm:px-6 lg:px-8">
+                            {{ $header }}
+                        </div>
+                    </header>
+                @endisset
+
+                <main class="pb-20 sm:pb-0">
+                    {{ $slot }}
+                </main>
+            </div>
+
         </div>
+
+        @include('layouts.mobile-nav')
     </body>
 </html>
