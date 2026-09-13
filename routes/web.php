@@ -27,5 +27,7 @@ Route::resource('appointments', App\Http\Controllers\AppointmentController::clas
 Route::patch('appointments/{appointment}/status', [App\Http\Controllers\AppointmentController::class, 'updateStatus'])->name('appointments.status');
 Route::resource('payments', App\Http\Controllers\PaymentController::class)->only(['index', 'create', 'store']);
 Route::get('reports', [App\Http\Controllers\ReportController::class, 'index'])->name('reports.index');
+Route::get('settings', [App\Http\Controllers\SettingsController::class, 'edit'])->name('settings.edit');
+Route::put('settings', [App\Http\Controllers\SettingsController::class, 'update'])->name('settings.update');
 
 require __DIR__.'/auth.php';
