@@ -29,36 +29,31 @@
                             <td class="px-4 py-3 text-muted">{{ $member->email }}</td>
                             <td class="px-4 py-3">
                                 @if ($member->pivot->role === 'owner')
-                                    <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-accent-light text-warning">Propriétaire</span>
+                                    <span class="inline-flex justify-center items-center w-28 text-xs font-semibold px-2.5 py-1.5 rounded-full bg-accent-light text-warning">
+                                        Propriétaire
+                                    </span>
                                 @else
                                     <form method="POST" action="{{ route('employees.role', $member) }}">
                                         @csrf
                                         @method('PATCH')
                                         <select name="role" onchange="this.form.submit()"
-                                                class="text-xs font-semibold px-2.5 py-1.5 rounded-full border-0 bg-[#EEF1F5] text-muted">
+                                                class="w-28 text-xs font-semibold text-center px-2.5 py-1.5 rounded-full border-0 bg-[#EEF1F5] text-muted appearance-none cursor-pointer">
                                             <option value="manager" @selected($member->pivot->role === 'manager')>Manager</option>
                                             <option value="employee" @selected($member->pivot->role === 'employee')>Employé</option>
                                         </select>
                                     </form>
                                 @endif
                             </td>
-                          <td class="px-4 py-3">
-    @if ($member->pivot->role === 'owner')
-        <span class="inline-flex justify-center items-center w-28 text-xs font-semibold px-2.5 py-1.5 rounded-full bg-accent-light text-warning">
-            Propriétaire
-        </span>
-    @else
-        <form method="POST" action="{{ route('employees.role', $member) }}">
-            @csrf
-            @method('PATCH')
-            <select name="role" onchange="this.form.submit()"
-                    class="w-28 text-xs font-semibold text-center px-2.5 py-1.5 rounded-full border-0 bg-[#EEF1F5] text-muted appearance-none cursor-pointer">
-                <option value="manager" @selected($member->pivot->role === 'manager')>Manager</option>
-                <option value="employee" @selected($member->pivot->role === 'employee')>Employé</option>
-            </select>
-        </form>
-    @endif
-</td>
+                            <td class="px-4 py-3 text-right">
+                                @if ($member->pivot->role !== 'owner' && $member->id !== auth()->id())
+                                    <form method="POST" action="{{ route('employees.destroy', $member) }}"
+                                          onsubmit="return confirm('Retirer {{ $member->name }} de l\'entreprise ?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-danger font-semibold hover:underline text-sm">Retirer</button>
+                                    </form>
+                                @endif
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
