@@ -25,5 +25,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 Route::resource('appointments', App\Http\Controllers\AppointmentController::class)->only(['index', 'create', 'store']);
 Route::patch('appointments/{appointment}/status', [App\Http\Controllers\AppointmentController::class, 'updateStatus'])->name('appointments.status');
+Route::resource('payments', App\Http\Controllers\PaymentController::class)->only(['index', 'create', 'store']);
 
 require __DIR__.'/auth.php';

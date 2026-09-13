@@ -9,20 +9,27 @@
 
                 <div class="hidden sm:flex sm:space-x-6">
                       <a href="{{ route('dashboard') }}"
-   class="text-sm font-medium {{ request()->routeIs('dashboard') ? 'text-accent' : 'text-muted hover:text-ink' }}">
-    Tableau de bord
-</a>
-<a href="{{ route('clients.index') }}"
-   class="text-sm font-medium {{ request()->routeIs('clients.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
-    Clients
-</a>
-<a href="{{ route('services.index') }}"
-   class="text-sm font-medium {{ request()->routeIs('services.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
-    Services
-</a>
-<a href="{{ route('appointments.index') }}"
-   class="text-sm font-medium {{ request()->routeIs('appointments.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
-    Rendez-vous
+                      class="text-sm font-medium {{ request()->routeIs('dashboard') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+                      Tableau de bord
+                    </a>
+                    <a href="{{ route('clients.index') }}"
+                    class="text-sm font-medium {{ request()->routeIs('clients.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+                    Clients
+                </a>
+
+                <a href="{{ route('services.index') }}"
+                class="text-sm font-medium {{ request()->routeIs('services.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+                Services
+            </a>
+
+            <a href="{{ route('appointments.index') }}"
+            class="text-sm font-medium {{ request()->routeIs('appointments.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+            Rendez-vous
+        </a>
+
+        <a href="{{ route('payments.index') }}"
+   class="text-sm font-medium {{ request()->routeIs('payments.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Paiements
 </a>
                 </div>
             </div>
@@ -86,7 +93,10 @@
    class="text-sm font-medium {{ request()->routeIs('appointments.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
     Rendez-vous
 </a>
-
+<a href="{{ route('payments.index') }}"
+   class="text-sm font-medium {{ request()->routeIs('payments.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Paiements
+</a>
         </div>
 
         <div class="pt-4 pb-3 border-t border-border px-4">
@@ -109,6 +119,10 @@
 <a href="{{ route('appointments.index') }}"
    class="text-sm font-medium {{ request()->routeIs('appointments.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
     Rendez-vous
+</a>
+<a href="{{ route('payments.index') }}"
+   class="text-sm font-medium {{ request()->routeIs('payments.*') ? 'text-accent' : 'text-muted hover:text-ink' }}">
+    Paiements
 </a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

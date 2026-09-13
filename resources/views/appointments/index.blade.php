@@ -20,6 +20,7 @@
                         <th class="text-left px-4 py-3">Client</th>
                         <th class="text-left px-4 py-3">Service</th>
                         <th class="text-left px-4 py-3">Statut</th>
+                        <th class="text-right px-4 py-3"></th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-border">
@@ -40,10 +41,15 @@
                                     </select>
                                 </form>
                             </td>
+                            <td class="px-4 py-3 text-right">
+    @if (!$appointment->payment)
+        <a href="{{ route('payments.create', ['appointment_id' => $appointment->id]) }}" class="text-accent font-semibold hover:underline">Encaisser</a>
+    @endif
+</td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="px-4 py-10 text-center text-muted">
+                            <td colspan="5" class="px-4 py-10 text-center text-muted">
                                 Aucun rendez-vous enregistré pour l'instant.
                             </td>
                         </tr>
