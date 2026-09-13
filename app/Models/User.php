@@ -47,4 +47,12 @@ class User extends Authenticatable
 {
     return $this->organizations()->first();
 }
+public function roleIn(?Organization $organization): ?string
+{
+    if (!$organization) {
+        return null;
+    }
+
+    return $this->memberships()->where('organization_id', $organization->id)->value('role');
+}
 }
