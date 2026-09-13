@@ -7,12 +7,13 @@
     <nav class="flex flex-col gap-1">
         @php
             $links = [
-                ['route' => 'dashboard', 'pattern' => 'dashboard', 'label' => 'Tableau de bord', 'icon' => 'M3 3h7v9H3V3zm11 0h7v5h-7V3zm0 9h7v9h-7v-9zM3 16h7v5H3v-5z'],
-                ['route' => 'clients.index', 'pattern' => 'clients.*', 'label' => 'Clients', 'icon' => 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75'],
-                ['route' => 'services.index', 'pattern' => 'services.*', 'label' => 'Services', 'icon' => 'M6 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM6 18a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12'],
-                ['route' => 'appointments.index', 'pattern' => 'appointments.*', 'label' => 'Rendez-vous', 'icon' => 'M3 4h18v18H3zM16 2v4M8 2v4M3 10h18'],
-                ['route' => 'payments.index', 'pattern' => 'payments.*', 'label' => 'Paiements', 'icon' => 'M1 4h22v16H1zM1 10h22'],
-            ];
+    ['route' => 'dashboard', 'pattern' => 'dashboard', 'label' => 'Tableau de bord', 'icon' => 'M3 3h7v9H3V3zm11 0h7v5h-7V3zm0 9h7v9h-7v-9zM3 16h7v5H3v-5z'],
+    ['route' => 'clients.index', 'pattern' => 'clients.*', 'label' => 'Clients', 'icon' => 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75'],
+    ['route' => 'services.index', 'pattern' => 'services.*', 'label' => 'Services', 'icon' => 'M6 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM6 18a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12'],
+    ['route' => 'appointments.index', 'pattern' => 'appointments.*', 'label' => 'Rendez-vous', 'icon' => 'M3 4h18v18H3zM16 2v4M8 2v4M3 10h18'],
+    ['route' => 'payments.index', 'pattern' => 'payments.*', 'label' => 'Paiements', 'icon' => 'M1 4h22v16H1zM1 10h22'],
+    ['route' => 'reports.index', 'pattern' => 'reports.*', 'label' => 'Rapports', 'icon' => 'M18 20V10M12 20V4M6 20v-6'],
+];
         @endphp
 
         @foreach ($links as $link)
