@@ -22,7 +22,7 @@ class Organization extends Model
         return $this->belongsToMany(User::class, 'memberships')
             ->withPivot('role')
             ->withTimestamps();
-            
+
     }
     public function clients(): HasMany
 {
@@ -39,5 +39,9 @@ public function appointments(): HasMany
 public function payments(): HasMany
 {
     return $this->hasMany(Payment::class);
+}
+public function auditLogs(): HasMany
+{
+    return $this->hasMany(AuditLog::class);
 }
 }

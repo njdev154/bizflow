@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AuditLog;
 use App\Models\Client;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -52,7 +53,8 @@ class ClientController extends Controller
             'notes' => ['nullable', 'string', 'max:2000'],
         ]);
 
-        $organization->clients()->create($validated);
+        $client = $organization->clients()->create($validated);
+        AuditLog::record('client.created', $client, ['full_name' => $client->full_name]);
 
         return redirect()->route('clients.index')->with('status', 'Client ajouté avec succès.');
     }
@@ -76,6 +78,7 @@ class ClientController extends Controller
         ]);
 
         $client->update($validated);
+        AuditLog::record('client.updated', $client, ['full_name' => $client->full_name]);
 
         return redirect()->route('clients.index')->with('status', 'Client modifié avec succès.');
     }

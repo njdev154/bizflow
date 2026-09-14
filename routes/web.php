@@ -29,6 +29,7 @@ Route::resource('payments', App\Http\Controllers\PaymentController::class)->only
 Route::get('reports', [App\Http\Controllers\ReportController::class, 'index'])->name('reports.index');
 Route::get('settings', [App\Http\Controllers\SettingsController::class, 'edit'])->name('settings.edit');
 Route::put('settings', [App\Http\Controllers\SettingsController::class, 'update'])->name('settings.update');
+Route::get('settings/audit-log', [App\Http\Controllers\SettingsController::class, 'auditLog'])->name('settings.audit-log');
 Route::resource('employees', App\Http\Controllers\EmployeeController::class)->only(['index', 'create', 'store', 'destroy']);
 Route::patch('employees/{member}/role', [App\Http\Controllers\EmployeeController::class, 'updateRole'])->name('employees.role');
 

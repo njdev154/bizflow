@@ -47,4 +47,14 @@ class SettingsController extends Controller
 
         return redirect()->route('settings.edit')->with('status', 'Paramètres mis à jour avec succès.');
     }
+    public function auditLog(Request $request): View
+{
+    $organization = $request->user()->currentOrganization();
+
+    abort_if(!$organization || $request->user()->roleIn($organization) !== 'owner', 403);
+
+    $logs = $organization->auditLogs()->with('user')->latest()->paginate(20);
+
+    return view('settings.audit-log', ['logs' => $logs]);
+}
 }

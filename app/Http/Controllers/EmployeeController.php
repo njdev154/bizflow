@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AuditLog;
 use App\Models\Membership;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
@@ -71,6 +72,8 @@ class EmployeeController extends Controller
 
         $membership->update(['role' => $validated['role']]);
 
+        AuditLog::record('employee.role_updated', $member, ['new_role' => $validated['role']]);
+
         return back()->with('status', 'Rôle mis à jour.');
     }
 
@@ -83,6 +86,8 @@ class EmployeeController extends Controller
 
         abort_if($membership->role === 'owner', 403, "Impossible de retirer le propriétaire.");
         abort_if($member->id === $request->user()->id, 403, "Vous ne pouvez pas vous retirer vous-même.");
+
+        AuditLog::record('employee.removed', $member, ['name' => $member->name]);
 
         $membership->delete();
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AuditLog;
 use App\Models\Payment;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -65,7 +66,7 @@ class PaymentController extends Controller
             'paid_at' => ['required', 'date'],
         ]);
 
-        $organization->payments()->create([
+        $payment = $organization->payments()->create([
             'client_id' => $validated['client_id'],
             'appointment_id' => $validated['appointment_id'] ?? null,
             'amount' => $validated['amount'],
@@ -73,6 +74,8 @@ class PaymentController extends Controller
             'status' => 'enregistre',
             'paid_at' => $validated['paid_at'],
         ]);
+
+        AuditLog::record('payment.created', $payment, ['amount' => (float) $payment->amount, 'method' => $payment->method]);
 
         return redirect()->route('payments.index')->with('status', 'Paiement enregistré avec succès.');
     }

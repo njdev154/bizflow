@@ -82,6 +82,9 @@
 
                 <x-primary-button class="w-auto px-6">Enregistrer les modifications</x-primary-button>
             </form>
+            <p class="mt-6 text-sm text-muted">
+    <a href="{{ route('settings.audit-log') }}" class="text-accent font-semibold hover:underline">Voir le journal d'audit →</a>
+</p>
         </div>
     </div>
 </x-app-layout>
