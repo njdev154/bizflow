@@ -11,19 +11,15 @@ use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 
-#[Fillable(['name', 'email', 'password'])]
+#[Fillable(['name', 'email', 'password', 'google_id', 'avatar_path'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [
@@ -43,16 +39,30 @@ class User extends Authenticatable
             ->withPivot('role')
             ->withTimestamps();
     }
+
     public function currentOrganization(): ?Organization
-{
-    return $this->organizations()->first();
-}
-public function roleIn(?Organization $organization): ?string
-{
-    if (!$organization) {
-        return null;
+    {
+        return $this->organizations()->first();
     }
 
-    return $this->memberships()->where('organization_id', $organization->id)->value('role');
-}
+    public function roleIn(?Organization $organization): ?string
+    {
+        if (!$organization) {
+            return null;
+        }
+
+        return $this->memberships()->where('organization_id', $organization->id)->value('role');
+    }
+
+    public function avatarUrl(): ?string
+    {
+        return $this->avatar_path ? Storage::url($this->avatar_path) : null;
+    }
+
+    public function initials(): string
+    {
+        return collect(explode(' ', $this->name))
+            ->map(fn ($part) => mb_substr($part, 0, 1))
+            ->join('');
+    }
 }

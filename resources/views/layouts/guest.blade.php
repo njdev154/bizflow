@@ -45,5 +45,7 @@
             </div>
 
         </div>
+
+        @include('partials.app-scripts')
     </body>
 </html>

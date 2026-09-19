@@ -10,7 +10,7 @@
                 Vous créez un compte de connexion pour cette personne. Communiquez-lui son email et le mot de passe temporaire ci-dessous — elle pourra le modifier ensuite depuis son profil.
             </p>
 
-            <form method="POST" action="{{ route('employees.store') }}">
+            <form method="POST" action="{{ route('employees.store') }}" data-guard-unsaved>
                 @csrf
 
                 <div>

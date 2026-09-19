@@ -38,5 +38,6 @@
         </div>
 
         @include('layouts.mobile-nav')
+        @include('partials.app-scripts')
     </body>
 </html>

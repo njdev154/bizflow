@@ -5,9 +5,39 @@
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-        <div class="flex justify-end mb-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+            <form method="GET" class="flex flex-wrap gap-3">
+                <select name="service_id" onchange="this.form.submit()"
+                        class="h-10 px-3 border border-border rounded-xl text-sm text-ink">
+                    <option value="">Tous les services</option>
+                    @foreach ($services as $service)
+                        <option value="{{ $service->id }}" @selected(($filters['service_id'] ?? null) == $service->id)>{{ $service->name }}</option>
+                    @endforeach
+                </select>
+
+                <select name="employee_id" onchange="this.form.submit()"
+                        class="h-10 px-3 border border-border rounded-xl text-sm text-ink">
+                    <option value="">Tous les employés</option>
+                    @foreach ($employees as $employee)
+                        <option value="{{ $employee->id }}" @selected(($filters['employee_id'] ?? null) == $employee->id)>{{ $employee->name }}</option>
+                    @endforeach
+                </select>
+
+                <select name="status" onchange="this.form.submit()"
+                        class="h-10 px-3 border border-border rounded-xl text-sm text-ink">
+                    <option value="">Tous les statuts</option>
+                    @foreach (['planifie' => 'Planifié', 'confirme' => 'Confirmé', 'en_attente' => 'En attente', 'termine' => 'Terminé', 'annule' => 'Annulé', 'absent' => 'Absent'] as $value => $label)
+                        <option value="{{ $value }}" @selected(($filters['status'] ?? null) === $value)>{{ $label }}</option>
+                    @endforeach
+                </select>
+
+                @if (array_filter($filters))
+                    <a href="{{ route('appointments.index') }}" class="text-sm text-muted self-center hover:text-ink">Réinitialiser</a>
+                @endif
+            </form>
+
             <a href="{{ route('appointments.create') }}"
-               class="inline-flex items-center justify-center h-11 px-5 bg-accent text-primary-dark rounded-xl font-semibold text-sm hover:bg-[#E08C00] transition">
+               class="inline-flex items-center justify-center h-11 px-5 bg-accent text-primary-dark rounded-xl font-semibold text-sm hover:bg-[#E08C00] transition whitespace-nowrap">
                 Nouveau rendez-vous
             </a>
         </div>
@@ -19,6 +49,7 @@
                         <th class="text-left px-4 py-3">Date / Heure</th>
                         <th class="text-left px-4 py-3">Client</th>
                         <th class="text-left px-4 py-3">Service</th>
+                        <th class="text-left px-4 py-3">Employé</th>
                         <th class="text-left px-4 py-3">Statut</th>
                         <th class="text-right px-4 py-3"></th>
                     </tr>
@@ -29,6 +60,7 @@
                             <td class="px-4 py-3 text-ink">{{ $appointment->scheduled_at->translatedFormat('d M Y, H:i') }}</td>
                             <td class="px-4 py-3 text-ink font-medium">{{ $appointment->client->full_name ?? 'Client supprimé' }}</td>
                             <td class="px-4 py-3 text-muted">{{ $appointment->service->name ?? '—' }}</td>
+                            <td class="px-4 py-3 text-muted">{{ $appointment->employee->name ?? 'Non assigné' }}</td>
                             <td class="px-4 py-3">
                                 <form method="POST" action="{{ route('appointments.status', $appointment) }}">
                                     @csrf
@@ -42,15 +74,15 @@
                                 </form>
                             </td>
                             <td class="px-4 py-3 text-right">
-    @if (!$appointment->payment)
-        <a href="{{ route('payments.create', ['appointment_id' => $appointment->id]) }}" class="text-accent font-semibold hover:underline">Encaisser</a>
-    @endif
-</td>
+                                @if (!$appointment->payment)
+                                    <a href="{{ route('payments.create', ['appointment_id' => $appointment->id]) }}" class="text-accent font-semibold hover:underline">Encaisser</a>
+                                @endif
+                            </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5" class="px-4 py-10 text-center text-muted">
-                                Aucun rendez-vous enregistré pour l'instant.
+                            <td colspan="6" class="px-4 py-10 text-center text-muted">
+                                Aucun rendez-vous ne correspond à ces critères.
                             </td>
                         </tr>
                     @endforelse

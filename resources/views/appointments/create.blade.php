@@ -16,7 +16,7 @@
                     @endif
                 </p>
             @else
-                <form method="POST" action="{{ route('appointments.store') }}">
+                <form method="POST" action="{{ route('appointments.store') }}" data-guard-unsaved>
                     @csrf
 
                     <div>
@@ -43,6 +43,18 @@
                             @endforeach
                         </select>
                         <x-input-error :messages="$errors->get('service_id')" />
+                    </div>
+
+                    <div class="mt-4">
+                        <x-input-label for="employee_id" value="Employé assigné (optionnel)" />
+                        <select id="employee_id" name="employee_id"
+                                class="w-full h-11 px-4 border border-border rounded-xl text-ink focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30">
+                            <option value="">Non assigné</option>
+                            @foreach ($employees as $employee)
+                                <option value="{{ $employee->id }}" @selected(old('employee_id') == $employee->id)>{{ $employee->name }}</option>
+                            @endforeach
+                        </select>
+                        <x-input-error :messages="$errors->get('employee_id')" />
                     </div>
 
                     <div class="mt-4 mb-6">

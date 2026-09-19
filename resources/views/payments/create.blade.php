@@ -22,7 +22,7 @@
          }">
         <div class="bg-surface border border-border rounded-xl p-6">
 
-            <form method="POST" action="{{ route('payments.store') }}">
+            <form method="POST" action="{{ route('payments.store') }}" data-guard-unsaved>
                 @csrf
 
                 <div>

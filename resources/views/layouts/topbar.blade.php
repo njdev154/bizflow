@@ -11,8 +11,12 @@
         <x-dropdown align="right" width="48">
             <x-slot name="trigger">
                 <button class="inline-flex items-center gap-2 px-2 py-1.5 rounded-xl text-sm font-medium text-muted hover:text-ink transition">
-                    <div class="w-8 h-8 rounded-full bg-accent-light text-warning flex items-center justify-center text-xs font-bold">
-                        {{ collect(explode(' ', Auth::user()->name))->map(fn($p) => mb_substr($p, 0, 1))->join('') }}
+                    <div class="w-8 h-8 rounded-full overflow-hidden bg-accent-light text-warning flex items-center justify-center text-xs font-bold shrink-0">
+                        @if (Auth::user()->avatarUrl())
+                            <img src="{{ Auth::user()->avatarUrl() }}" alt="Photo de profil" class="w-full h-full object-cover">
+                        @else
+                            {{ Auth::user()->initials() }}
+                        @endif
                     </div>
                     <span class="hidden sm:inline">{{ Auth::user()->name }}</span>
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -32,4 +36,4 @@
             </x-slot>
         </x-dropdown>
     </div>
-</header>
+</header>   

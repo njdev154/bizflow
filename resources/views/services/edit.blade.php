@@ -5,7 +5,7 @@
 
     <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="bg-surface border border-border rounded-xl p-6">
-            <form method="POST" action="{{ route('services.update', $service) }}">
+            <form method="POST" action="{{ route('services.update', $service) }}" data-guard-unsaved>
                 @csrf
                 @method('PUT')
                 @include('services._form')
