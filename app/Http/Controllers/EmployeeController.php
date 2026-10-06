@@ -17,7 +17,13 @@ class EmployeeController extends Controller
         $organization = $request->user()->currentOrganization();
         $this->authorizeOwner($request, $organization);
 
-        $members = $organization->users()->orderByRaw("field(memberships.role, 'owner', 'manager', 'employee')")->get();
+        $members = $organization->users()
+            ->orderByRaw(
+                'CASE memberships.role WHEN ? THEN 0 WHEN ? THEN 1 WHEN ? THEN 2 ELSE 3 END',
+                ['owner', 'manager', 'employee'],
+            )
+            ->orderBy('users.name')
+            ->get();
 
         return view('employees.index', ['members' => $members]);
     }
