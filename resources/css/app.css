@@ -1,3 +1,94 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../../storage/framework/views/*.php";
+@source "../views/**/*.blade.php";
+
+@theme {
+    --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+    --color-primary: #0B1F3A;
+    --color-primary-dark: #07162A;
+    --color-accent: #F59E0B;
+    --color-accent-light: #FFF4D8;
+    --color-surface: #FFFFFF;
+    --color-background: #F5F7FA;
+    --color-ink: #172033;
+    --color-muted: #667085;
+    --color-border: #D9E0EA;
+    --color-success: #16A34A;
+    --color-danger: #DC2626;
+    --color-warning: #D97706;
+}
+
+:root {
+    color-scheme: light;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f7fb;
+}
+
+.hero-glow {
+    position: relative;
+}
+
+.hero-glow::before {
+    content: "";
+    position: absolute;
+    inset: auto 12% -30% 12%;
+    height: 16rem;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.26), rgba(245, 158, 11, 0) 68%);
+    filter: blur(16px);
+    pointer-events: none;
+}
+
+.preview-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(240,244,250,0.96));
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+.preview-stat {
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.feature-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+}
+
+.step-dot {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    background: rgba(245, 158, 11, 0.12);
+    color: #b45309;
+}
+
+.brand-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.05);
+    padding: 0.5rem 0.95rem;
+    color: rgba(255,255,255,0.86);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}

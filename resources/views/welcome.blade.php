@@ -3,144 +3,176 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BizFlow aide les entreprises de services à gérer leurs clients, rendez-vous, paiements et activité commerciale en un seul tableau de bord.">
     <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
-    <title>{{ config('app.name', 'BizFlow') }} — Gérez votre entreprise de services simplement</title>
+    <title>{{ config('app.name', 'BizFlow') }} — Gestion simple pour les entreprises de services</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800&display=swap" rel="stylesheet" />
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="font-sans text-ink antialiased bg-background">
-
-    <!-- ============ HEADER ============ -->
-    <header class="bg-surface border-b border-border sticky top-0 z-10">
-        <div class="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
-            <a href="/" class="flex items-center gap-2 font-bold text-lg">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo BizFlow" class="h-8 w-8">
+<body class="font-sans antialiased text-slate-900 bg-[#f3f5f8]">
+    <header class="sticky top-0 z-20 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+            <a href="/" class="flex items-center gap-3 font-extrabold text-lg text-slate-900">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo BizFlow" class="h-9 w-9 rounded-lg">
                 BizFlow
             </a>
-            <nav class="hidden md:flex gap-8 text-sm text-muted">
-                <a href="#" class="hover:text-ink">Accueil</a>
-                <a href="#fonctionnalites" class="hover:text-ink">Fonctionnalités</a>
-                <a href="#" class="hover:text-ink">Tarifs</a>
-                <a href="#" class="hover:text-ink">À propos</a>
+
+            <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+                <a href="#accueil" class="transition hover:text-slate-900">Accueil</a>
+                <a href="#fonctionnalites" class="transition hover:text-slate-900">Fonctionnalités</a>
+                <a href="#avantages" class="transition hover:text-slate-900">Avantages</a>
+                <a href="#contact" class="transition hover:text-slate-900">Contact</a>
             </nav>
+
             <div class="flex items-center gap-3">
-                <a href="{{ route('login') }}" class="hidden sm:inline text-sm font-medium text-muted hover:text-ink">Se connecter</a>
-                <a href="{{ route('register') }}" class="inline-flex items-center h-10 px-4 bg-accent text-primary-dark rounded-xl font-semibold text-sm hover:bg-[#E08C00] transition">
-                    Créer un compte
-                </a>
+                <a href="{{ route('login') }}" class="hidden rounded-xl px-4 py-2 text-sm font-semibold text-slate-600 transition hover:text-slate-900 sm:inline-flex">Se connecter</a>
+                <a href="{{ route('register') }}" class="inline-flex items-center justify-center rounded-xl bg-[#0f172a] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800">Créer un compte</a>
             </div>
         </div>
     </header>
 
-    <!-- ============ HERO ============ -->
-    <section class="bg-primary text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 py-16 lg:py-20 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
-            <div>
-                <h1 class="text-3xl sm:text-4xl font-bold leading-tight mb-4">
-                    Gérez votre entreprise de services <span class="text-accent">simplement</span> et efficacement
-                </h1>
-                <p class="text-white/70 text-lg mb-6 max-w-md">
-                    BizFlow vous aide à gérer vos clients, vos rendez-vous, vos paiements et bien plus encore. Concentrez-vous sur votre métier, on s'occupe du reste.
-                </p>
-                <div class="flex flex-wrap gap-3 mb-6">
-                    <a href="{{ route('register') }}" class="inline-flex items-center justify-center h-11 px-5 bg-accent text-primary-dark rounded-xl font-semibold text-sm hover:bg-[#E08C00] transition">
-                        Commencer gratuitement
-                    </a>
-                    <a href="#fonctionnalites" class="inline-flex items-center justify-center h-11 px-5 bg-transparent border border-white/30 text-white rounded-xl font-semibold text-sm hover:bg-white/10 transition">
-                        Découvrir le produit
-                    </a>
-                </div>
-                <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm">
-                    <span class="text-white/70">Déjà utilisé par</span>
-                    <strong class="text-accent">+2000 entreprises</strong>
-                </div>
-            </div>
+    <main id="accueil" class="overflow-hidden">
+        <section class="hero-glow relative border-b border-slate-200 bg-[#0b1f3a] text-white">
+            <div class="mx-auto grid max-w-7xl items-center gap-10 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr]">
+                <div>
+                    <span class="brand-pill mb-6">Gestion • Rendez-vous • Paiements</span>
+                    <h1 class="max-w-xl text-4xl font-extrabold leading-tight sm:text-5xl">
+                        Une gestion plus claire pour votre activité de services.
+                    </h1>
+                    <p class="mt-5 max-w-lg text-lg text-slate-200">
+                        BizFlow aide les salons, instituts, cabinets et PME à centraliser clients, planning, facturation et performance dans un seul espace simple et fiable.
+                    </p>
 
-            <div class="relative hidden lg:block aspect-[4/3] rounded-xl border border-white/10 overflow-hidden">
-                <div class="absolute inset-0" style="background: linear-gradient(160deg, rgba(245,158,11,0.18), rgba(255,255,255,0.04));"></div>
-                <div class="absolute inset-0 flex items-center justify-center p-6 text-center text-xs text-white/40">
-                    Emplacement réservé — photo d'une professionnelle en activité
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ MÉTIERS ============ -->
-    <section class="max-w-7xl mx-auto px-6 py-12">
-        <h2 class="text-sm font-semibold text-muted uppercase tracking-wide mb-5">Adapté à tous les métiers</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            @foreach ([
-                ['label' => 'Salon de coiffure', 'icon' => 'M6 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM6 18a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12'],
-                ['label' => 'Barbers', 'icon' => 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z'],
-                ['label' => 'Institut de beauté', 'icon' => 'M20 5h-3.17L15 3H9L7.17 5H4a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z'],
-                ['label' => 'Photographes', 'icon' => 'M20 5h-3.17L15 3H9L7.17 5H4a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z'],
-                ['label' => 'Réparateurs', 'icon' => 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'],
-            ] as $metier)
-                <div class="bg-surface border border-border rounded-xl p-4 text-center shadow-sm">
-                    <svg class="w-8 h-8 mx-auto mb-2 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                        <path d="{{ $metier['icon'] }}" />
-                    </svg>
-                    <span class="text-sm font-medium">{{ $metier['label'] }}</span>
-                </div>
-            @endforeach
-        </div>
-    </section>
-
-    <!-- ============ FONCTIONNALITÉS ============ -->
-    <section id="fonctionnalites" class="max-w-7xl mx-auto px-6 py-12">
-        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-2">Tout ce qu'il faut pour piloter votre activité</h2>
-        <p class="text-muted text-center mb-10">Clients, rendez-vous, paiements et rapports — au même endroit.</p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            @foreach ([
-                ['title' => 'Gestion des clients', 'text' => 'Toutes les informations de vos clients centralisées : contact, historique, sommes encaissées.', 'icon' => 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75'],
-                ['title' => 'Rendez-vous', 'text' => 'Planifiez, confirmez et suivez vos rendez-vous sans conflit d\'horaire.', 'icon' => 'M3 4h18v18H3zM16 2v4M8 2v4M3 10h18'],
-                ['title' => 'Paiements', 'text' => 'Enregistrez vos recettes (espèces, Mobile Money, carte) et gardez un historique fiable.', 'icon' => 'M1 4h22v16H1zM1 10h22'],
-                ['title' => 'Rapports', 'text' => 'Suivez votre chiffre d\'affaires par période, service et méthode de paiement.', 'icon' => 'M18 20V10M12 20V4M6 20v-6'],
-            ] as $feature)
-                <div class="bg-surface border border-border rounded-xl p-5 shadow-sm">
-                    <div class="w-11 h-11 rounded-lg bg-accent-light text-warning flex items-center justify-center mb-4">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <path d="{{ $feature['icon'] }}" />
-                        </svg>
+                    <div class="mt-8 flex flex-wrap items-center gap-3">
+                        <a href="{{ route('register') }}" class="inline-flex items-center justify-center rounded-xl bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-amber-500/20 transition hover:bg-[#f5b94b]">
+                            Commencer gratuitement
+                        </a>
+                        <a href="#fonctionnalites" class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                            Découvrir les fonctionnalités
+                        </a>
                     </div>
-                    <h3 class="font-semibold mb-2">{{ $feature['title'] }}</h3>
-                    <p class="text-sm text-muted leading-relaxed">{{ $feature['text'] }}</p>
+
+                    <div class="mt-10 flex flex-wrap items-center gap-6 text-sm text-slate-200">
+                        <div>
+                            <span class="block text-3xl font-extrabold text-white">+2k</span>
+                            <span>entreprises engagées</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-extrabold text-white">15 min</span>
+                            <span>pour prendre le contrôle</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-extrabold text-white">24/7</span>
+                            <span>suivi de l’activité</span>
+                        </div>
+                    </div>
                 </div>
-            @endforeach
-        </div>
-    </section>
 
-    <!-- ============ CTA FINAL ============ -->
-    <section class="bg-primary text-white text-center py-14">
-        <div class="max-w-2xl mx-auto px-6">
-            <h2 class="text-2xl font-bold mb-2">Prêt à gagner du temps sur la gestion de votre activité ?</h2>
-            <p class="text-white/70 mb-6">Créez votre espace entreprise en quelques minutes, sans engagement.</p>
-            <a href="{{ route('register') }}" class="inline-flex items-center justify-center h-11 px-6 bg-accent text-primary-dark rounded-xl font-semibold text-sm hover:bg-[#E08C00] transition">
-                Commencer gratuitement
-            </a>
-        </div>
-    </section>
-
-    <!-- ============ FOOTER ============ -->
-    <footer class="bg-primary-dark text-white/60 py-8">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-2 text-white font-bold">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo BizFlow" class="h-6 w-6">
-                BizFlow
+                <div class="preview-card relative overflow-hidden rounded-[28px] p-4">
+                    <img src="{{ asset('images/bizflow-dashboard-preview.svg') }}" alt="Aperçu du tableau de bord BizFlow" class="w-full rounded-[20px] object-cover">
+                </div>
             </div>
-            <nav class="flex gap-4 text-sm">
-                <a href="#" class="hover:text-white">Fonctionnalités</a>
-                <a href="#" class="hover:text-white">Tarifs</a>
-                <a href="#" class="hover:text-white">Mentions légales</a>
-                <a href="#" class="hover:text-white">Contact</a>
-            </nav>
-            <span class="text-sm">Simplifiez la gestion de votre activité.</span>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 py-16" id="avantages">
+            <div class="mb-8 text-center">
+                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-amber-600">Pourquoi BizFlow</p>
+                <h2 class="mt-3 text-3xl font-bold text-slate-900">Des outils conçus pour la réalité de terrain</h2>
+            </div>
+
+            <div class="grid gap-5 md:grid-cols-3">
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-xl text-amber-700">⚡</div>
+                    <h3 class="mb-2 text-xl font-bold text-slate-900">Gain de temps immédiat</h3>
+                    <p class="text-sm leading-6 text-slate-600">Trouvez les bons rendez-vous, suivez les paiements et évitez le travail manuel inutile.</p>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-xl text-sky-700">📊</div>
+                    <h3 class="mb-2 text-xl font-bold text-slate-900">Vue d’ensemble fiable</h3>
+                    <p class="text-sm leading-6 text-slate-600">Le tableau de bord centralise le chiffre d’affaires, les clients actifs et le suivi quotidien.</p>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-xl text-emerald-700">✅</div>
+                    <h3 class="mb-2 text-xl font-bold text-slate-900">Moins d’erreurs</h3>
+                    <p class="text-sm leading-6 text-slate-600">Les conflits de créneau, les rapports et les données de paiement sont mieux sécurisés et plus lisibles.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fonctionnalites" class="bg-white py-16">
+            <div class="mx-auto max-w-7xl px-6">
+                <div class="mb-10 text-center">
+                    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-amber-600">Fonctionnalités</p>
+                    <h2 class="mt-3 text-3xl font-bold text-slate-900">Tout ce qu’il faut pour gérer une activité de services</h2>
+                </div>
+
+                <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+                    @foreach([
+                        ['title' => 'Clients', 'text' => 'Centralisez les profils, les contacts, les notes et l’historique de chaque client.', 'icon' => '👥'],
+                        ['title' => 'Rendez-vous', 'text' => 'Planifiez les créneaux, vérifiez les conflits et suivez le statut de chaque prise en charge.', 'icon' => '📅'],
+                        ['title' => 'Paiements', 'text' => 'Enregistrez les transactions et suivez les revenus par jour, statut et méthode.', 'icon' => '💳'],
+                        ['title' => 'Rapports', 'text' => 'Consultez rapidement votre activité, la performance et les tendances de chiffre d’affaires.', 'icon' => '📈'],
+                    ] as $feature)
+                        <article class="feature-card rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                            <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white text-2xl shadow-sm">{{ $feature['icon'] }}</div>
+                            <h3 class="mb-2 text-xl font-bold text-slate-900">{{ $feature['title'] }}</h3>
+                            <p class="text-sm leading-6 text-slate-600">{{ $feature['text'] }}</p>
+                        </article>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 py-16">
+            <div class="mb-10 text-center">
+                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-amber-600">Méthode</p>
+                <h2 class="mt-3 text-3xl font-bold text-slate-900">Un workflow simple, de l’inscription au suivi</h2>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-3">
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div class="step-dot mb-4">1</div>
+                    <h3 class="mb-2 text-xl font-bold text-slate-900">Créez votre espace</h3>
+                    <p class="text-sm leading-6 text-slate-600">Configurez votre entreprise, vos services et votre équipe en quelques minutes.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div class="step-dot mb-4">2</div>
+                    <h3 class="mb-2 text-xl font-bold text-slate-900">Gérez votre activité</h3>
+                    <p class="text-sm leading-6 text-slate-600">Suivez les rendez-vous, les clients et les paiements sans friction.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div class="step-dot mb-4">3</div>
+                    <h3 class="mb-2 text-xl font-bold text-slate-900">Prenez des décisions</h3>
+                    <p class="text-sm leading-6 text-slate-600">Analysez les performances et planifiez votre croissance avec des données fiables.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-[#0b1f3a] py-16 text-white">
+            <div class="mx-auto max-w-4xl px-6 text-center">
+                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300">À retenir</p>
+                <h2 class="mt-3 text-3xl font-bold">BizFlow ne remplace pas votre métier : il le rend plus fluide.</h2>
+                <p class="mx-auto mt-5 max-w-2xl text-lg text-slate-200">
+                    Le produit est pensé pour les entreprises de services qui veulent gagner du temps, réduire les erreurs et mieux maîtriser leur activité au quotidien.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="border-t border-slate-200 bg-white">
+        <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-8 text-center sm:flex-row sm:text-left">
+            <div class="flex items-center gap-3">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo BizFlow" class="h-8 w-8 rounded-lg">
+                <span class="text-lg font-extrabold text-slate-900">BizFlow</span>
+            </div>
+            <p class="text-sm text-slate-600">Gérez votre PME de services avec plus de clarté.</p>
+            <a href="{{ route('register') }}" class="inline-flex items-center justify-center rounded-xl bg-[#0f172a] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800">Créer un compte</a>
         </div>
     </footer>
-
 </body>
 </html>
