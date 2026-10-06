@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">
+        <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
         <meta name="theme-color" content="#0B1F3A">
 
         <title>BizFlow — Gestion d’activité</title>

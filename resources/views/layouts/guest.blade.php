@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">
+        <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
         <meta name="theme-color" content="#0B1F3A">
 
         <title>BizFlow — Connexion à votre espace</title>
@@ -39,8 +39,8 @@
                     @isset($aside)
                         {{ $aside }}
                     @else
-                        <h2 class="text-2xl font-bold mb-4">Plus qu'un outil, un partenaire pour votre croissance.</h2>
-                        <p class="text-white/70">Retrouvez au même endroit vos clients, vos rendez-vous, vos services et le suivi de vos paiements.</p>
+                        <h2 class="text-2xl font-bold mb-4">Votre activité, organisée au même endroit.</h2>
+                        <p class="text-white/70">Ajoutez votre entreprise, puis gérez vos clients, vos prestations, vos rendez-vous et vos paiements.</p>
                     @endisset
                 </div>
             </div>

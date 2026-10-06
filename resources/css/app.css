@@ -28,6 +28,10 @@ html {
     scroll-behavior: smooth;
 }
 
+#contact {
+    scroll-margin-top: 5rem;
+}
+
 body {
     background: #f4f7fb;
 }
@@ -44,27 +48,6 @@ body {
     background: radial-gradient(circle, rgba(245, 158, 11, 0.26), rgba(245, 158, 11, 0) 68%);
     filter: blur(16px);
     pointer-events: none;
-}
-
-.feature-card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
-}
-
-.step-dot {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 9999px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    background: rgba(245, 158, 11, 0.12);
-    color: #b45309;
 }
 
 .brand-pill {

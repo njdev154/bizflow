@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="BizFlow aide les entreprises de services à gérer leurs clients, rendez-vous, paiements et activité commerciale en un seul tableau de bord.">
-    <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <meta name="theme-color" content="#0B1F3A">
     <title>BizFlow — Gestion simple pour les entreprises de services</title>
 
@@ -24,7 +24,7 @@
             <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
                 <a href="#accueil" class="transition hover:text-slate-900">Accueil</a>
                 <a href="#fonctionnalites" class="transition hover:text-slate-900">Fonctionnalités</a>
-                <a href="#avantages" class="transition hover:text-slate-900">Avantages</a>
+                <a href="#au-quotidien" class="transition hover:text-slate-900">Au quotidien</a>
                 <a href="#contact" class="transition hover:text-slate-900">Contact</a>
             </nav>
 
@@ -39,141 +39,59 @@
         <section class="hero-glow relative border-b border-slate-200 bg-[#0b1f3a] text-white">
             <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr]">
                 <div>
-                    <span class="brand-pill mb-6">Gestion • Rendez-vous • Paiements</span>
+                    <span class="brand-pill mb-6">Pour les entreprises de services</span>
                     <h1 class="max-w-xl text-4xl font-extrabold leading-tight sm:text-5xl">
-                        Une gestion plus claire pour votre activité de services.
+                        Vos rendez-vous, vos clients et vos encaissements au même endroit.
                     </h1>
                     <p class="mt-5 max-w-lg text-lg text-slate-200">
-                        BizFlow aide les salons, instituts, cabinets et PME à centraliser clients, planning, facturation et performance dans un seul espace simple et fiable.
+                        Pour un salon, un institut ou une petite équipe, BizFlow réunit les fiches clients, les prestations, le planning et les paiements. Le tableau de bord montre les rendez-vous et les recettes enregistrées.
                     </p>
 
                     <div class="mt-8 flex flex-wrap items-center gap-3">
-                        <a href="{{ route('register') }}" class="inline-flex items-center justify-center rounded-xl bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-amber-500/20 transition hover:bg-[#f5b94b]">
-                            Commencer gratuitement
+                        <a href="{{ route('register') }}" class="inline-flex items-center justify-center rounded-lg bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-[#f5b94b]">
+                            Créer mon espace
                         </a>
-                        <a href="#fonctionnalites" class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-                            Découvrir les fonctionnalités
+                        <a href="#fonctionnalites" class="inline-flex items-center justify-center border-b border-white/40 px-1 py-3 text-sm font-semibold text-white transition hover:border-white">
+                            Voir ce que l’on peut gérer
                         </a>
                     </div>
 
                 </div>
 
-                <div class="relative border-l border-white/15 py-3 pl-6 sm:pl-9">
-                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">Dans votre espace BizFlow</p>
-                    <h2 class="mt-3 text-2xl font-bold text-white">Les outils essentiels de votre activité, réunis au même endroit.</h2>
-
-                    <ul class="mt-7 divide-y divide-white/10">
-                        <li class="flex items-center gap-4 py-4">
-                            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-amber-300">
-                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m6-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6-7.5a4 4 0 0 1 0 7.8M20 15a4 4 0 0 1 2 3.5V21" />
-                                </svg>
-                            </span>
-                            <span>
-                                <span class="block font-semibold text-white">Clients</span>
-                                <span class="mt-1 block text-sm text-slate-300">Contacts et informations centralisés</span>
-                            </span>
-                        </li>
-                        <li class="flex items-center gap-4 py-4">
-                            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-amber-300">
-                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-                                    <rect x="3" y="5" width="18" height="16" rx="2" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 3v4M8 3v4M3 10h18m-13 4h2m3 0h2" />
-                                </svg>
-                            </span>
-                            <span>
-                                <span class="block font-semibold text-white">Rendez-vous</span>
-                                <span class="mt-1 block text-sm text-slate-300">Créneaux et suivi des statuts</span>
-                            </span>
-                        </li>
-                        <li class="flex items-center gap-4 py-4">
-                            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-amber-300">
-                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-                                    <rect x="2" y="5" width="20" height="14" rx="2" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2 10h20m-15 5h4" />
-                                </svg>
-                            </span>
-                            <span>
-                                <span class="block font-semibold text-white">Services et paiements</span>
-                                <span class="mt-1 block text-sm text-slate-300">Prestations, recettes et activité</span>
-                            </span>
-                        </li>
-                    </ul>
+                <div class="relative border-l border-white/20 py-3 pl-6 sm:pl-9">
+                    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-amber-300">Un cas concret</p>
+                    <h2 class="mt-3 text-2xl font-bold text-white">Un rendez-vous ne doit pas en chevaucher un autre.</h2>
+                    <p class="mt-4 max-w-md leading-7 text-slate-300">
+                        À la réservation, BizFlow vérifie la durée de la prestation et les rendez-vous déjà prévus pour la même personne. Si le créneau se chevauche, il vous demande d’en choisir un autre.
+                    </p>
+                    <a href="#fonctionnalites" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber-300 hover:text-amber-200">
+                        Voir les autres outils
+                        <span aria-hidden="true">→</span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="mx-auto max-w-7xl px-6 py-16" id="avantages">
-            <div class="mb-8 text-center">
-                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-amber-600">Pourquoi BizFlow</p>
-                <h2 class="mt-3 text-3xl font-bold text-slate-900">Des outils conçus pour la réalité de terrain</h2>
-            </div>
-
-            <div class="grid gap-5 md:grid-cols-3">
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
-                        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 2 4.5 13h6l-.5 9 9.5-12h-6L13 2Z" />
-                        </svg>
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold text-slate-900">Gain de temps immédiat</h3>
-                    <p class="text-sm leading-6 text-slate-600">Trouvez les bons rendez-vous, suivez les paiements et évitez le travail manuel inutile.</p>
+        <section id="fonctionnalites" class="border-y border-slate-200 bg-white py-16">
+            <div class="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-[0.8fr_1.2fr]">
+                <div>
+                    <p class="text-sm font-semibold uppercase tracking-[0.16em] text-amber-700">Dans BizFlow</p>
+                    <h2 class="mt-3 text-3xl font-bold text-slate-900">Ce que vous pouvez suivre</h2>
+                    <p class="mt-4 max-w-sm leading-7 text-slate-600">
+                        Chaque partie répond à une tâche courante : retrouver un client, préparer une prestation ou vérifier les encaissements.
+                    </p>
                 </div>
 
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
-                        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 19V9m5 10V5m5 14v-7m5 7V3M2 19h20" />
-                        </svg>
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold text-slate-900">Vue d’ensemble fiable</h3>
-                    <p class="text-sm leading-6 text-slate-600">Le tableau de bord centralise le chiffre d’affaires, les clients actifs et le suivi quotidien.</p>
-                </div>
-
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
-                        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.7 3.2 7.8 7.5 9.5 4.3-1.7 7.5-4.8 7.5-9.5V6L12 3Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.5 12 2.2 2.2 4.8-4.8" />
-                        </svg>
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold text-slate-900">Moins d’erreurs</h3>
-                    <p class="text-sm leading-6 text-slate-600">Les conflits de créneau, les rapports et les données de paiement sont mieux sécurisés et plus lisibles.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="fonctionnalites" class="bg-white py-16">
-            <div class="mx-auto max-w-7xl px-6">
-                <div class="mb-10 text-center">
-                    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-amber-600">Fonctionnalités</p>
-                    <h2 class="mt-3 text-3xl font-bold text-slate-900">Tout ce qu’il faut pour gérer une activité de services</h2>
-                </div>
-
-                <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+                <div class="divide-y divide-slate-200">
                     @foreach([
-                        ['title' => 'Clients', 'text' => 'Centralisez les profils, les contacts, les notes et l’historique de chaque client.', 'icon' => 'users'],
-                        ['title' => 'Rendez-vous', 'text' => 'Planifiez les créneaux, vérifiez les conflits et suivez le statut de chaque prise en charge.', 'icon' => 'calendar'],
-                        ['title' => 'Paiements', 'text' => 'Enregistrez les transactions et suivez les revenus par jour, statut et méthode.', 'icon' => 'payment'],
-                        ['title' => 'Rapports', 'text' => 'Consultez rapidement votre activité, la performance et les tendances de chiffre d’affaires.', 'icon' => 'chart'],
+                        ['number' => '01', 'title' => 'Clients', 'text' => 'Retrouvez les coordonnées, les notes et les informations de contact.'],
+                        ['number' => '02', 'title' => 'Services', 'text' => 'Définissez vos prestations, leur durée et leur prix.'],
+                        ['number' => '03', 'title' => 'Rendez-vous', 'text' => 'Associez un client, une prestation, un horaire et, si besoin, un membre de l’équipe.'],
+                        ['number' => '04', 'title' => 'Paiements et rapports', 'text' => 'Enregistrez les règlements et consultez les recettes par période.'],
                     ] as $feature)
-                        <article class="feature-card rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                            <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white text-slate-700 shadow-sm">
-                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-                                    @if ($feature['icon'] === 'users')
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m6-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6-7.5a4 4 0 0 1 0 7.8M20 15a4 4 0 0 1 2 3.5V21" />
-                                    @elseif ($feature['icon'] === 'calendar')
-                                        <rect x="3" y="5" width="18" height="16" rx="2" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 3v4M8 3v4M3 10h18m-13 4h2m3 0h2m-7 3h2" />
-                                    @elseif ($feature['icon'] === 'payment')
-                                        <rect x="2" y="5" width="20" height="14" rx="2" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2 10h20m-15 5h4" />
-                                    @else
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 19V9m5 10V5m5 14v-7m5 7V3M2 19h20" />
-                                    @endif
-                                </svg>
-                            </div>
-                            <h3 class="mb-2 text-xl font-bold text-slate-900">{{ $feature['title'] }}</h3>
+                        <article class="grid gap-2 py-5 sm:grid-cols-[3rem_10rem_1fr] sm:gap-4">
+                            <span class="font-mono text-sm text-amber-700">{{ $feature['number'] }}</span>
+                            <h3 class="font-semibold text-slate-900">{{ $feature['title'] }}</h3>
                             <p class="text-sm leading-6 text-slate-600">{{ $feature['text'] }}</p>
                         </article>
                     @endforeach
@@ -181,50 +99,58 @@
             </div>
         </section>
 
-        <section class="mx-auto max-w-7xl px-6 py-16">
-            <div class="mb-10 text-center">
-                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-amber-600">Méthode</p>
-                <h2 class="mt-3 text-3xl font-bold text-slate-900">Un workflow simple, de l’inscription au suivi</h2>
+        <section id="au-quotidien" class="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:grid-cols-[1fr_1.2fr]">
+            <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.16em] text-amber-700">Au quotidien</p>
+                <h2 class="mt-3 text-3xl font-bold text-slate-900">D’abord le travail du jour. Ensuite le bilan.</h2>
             </div>
-
-            <div class="grid gap-6 md:grid-cols-3">
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <div class="step-dot mb-4">1</div>
-                    <h3 class="mb-2 text-xl font-bold text-slate-900">Créez votre espace</h3>
-                    <p class="text-sm leading-6 text-slate-600">Configurez votre entreprise, vos services et votre équipe en quelques minutes.</p>
-                </div>
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <div class="step-dot mb-4">2</div>
-                    <h3 class="mb-2 text-xl font-bold text-slate-900">Gérez votre activité</h3>
-                    <p class="text-sm leading-6 text-slate-600">Suivez les rendez-vous, les clients et les paiements sans friction.</p>
-                </div>
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <div class="step-dot mb-4">3</div>
-                    <h3 class="mb-2 text-xl font-bold text-slate-900">Prenez des décisions</h3>
-                    <p class="text-sm leading-6 text-slate-600">Analysez les performances et planifiez votre croissance avec des données fiables.</p>
-                </div>
+            <div class="border-l border-slate-300 pl-6 sm:pl-8">
+                <p class="leading-7 text-slate-700">
+                    L’accueil montre les rendez-vous prévus aujourd’hui, les derniers paiements et les recettes des sept derniers jours. Les montants affichés viennent des paiements enregistrés dans votre espace.
+                </p>
+                <a href="{{ route('register') }}" class="mt-6 inline-flex items-center gap-2 font-semibold text-slate-900 underline decoration-amber-500 decoration-2 underline-offset-4 hover:text-amber-800">
+                    Créer mon espace
+                    <span aria-hidden="true">→</span>
+                </a>
             </div>
         </section>
 
-        <section class="bg-[#0b1f3a] py-16 text-white">
-            <div class="mx-auto max-w-4xl px-6 text-center">
-                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300">À retenir</p>
-                <h2 class="mt-3 text-3xl font-bold">BizFlow ne remplace pas votre métier : il le rend plus fluide.</h2>
-                <p class="mx-auto mt-5 max-w-2xl text-lg text-slate-200">
-                    Le produit est pensé pour les entreprises de services qui veulent gagner du temps, réduire les erreurs et mieux maîtriser leur activité au quotidien.
-                </p>
+        <section id="contact" class="border-y border-slate-200 bg-white">
+            <div class="mx-auto grid max-w-7xl gap-8 px-6 py-14 md:grid-cols-[1fr_1.2fr]">
+                <div>
+                    <p class="text-sm font-semibold uppercase tracking-[0.16em] text-amber-700">Contact</p>
+                    <h2 class="mt-3 text-3xl font-bold text-slate-900">Une question sur BizFlow ?</h2>
+                    <p class="mt-4 max-w-sm leading-7 text-slate-600">Écris-nous par e-mail ou envoie un message WhatsApp.</p>
+                </div>
+
+                <div class="divide-y divide-slate-200 border-y border-slate-200">
+                    <a href="mailto:auraachitecture@gmail.com" class="group flex items-center justify-between gap-4 py-5">
+                        <span>
+                            <span class="block text-sm text-slate-500">E-mail</span>
+                            <span class="mt-1 block font-semibold text-slate-900 group-hover:text-amber-800">auraachitecture@gmail.com</span>
+                        </span>
+                        <span class="text-sm font-medium text-slate-600 group-hover:text-amber-800">Écrire <span aria-hidden="true">→</span></span>
+                    </a>
+                    <a href="https://wa.me/2250100292573?text=Bonjour%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20BizFlow." target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between gap-4 py-5">
+                        <span>
+                            <span class="block text-sm text-slate-500">WhatsApp</span>
+                            <span class="mt-1 block font-semibold text-slate-900 group-hover:text-amber-800">01 00 29 25 73</span>
+                        </span>
+                        <span class="text-sm font-medium text-slate-600 group-hover:text-amber-800">Envoyer un message <span aria-hidden="true">→</span></span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer id="contact" class="border-t border-slate-200 bg-white">
+    <footer class="bg-[#f3f5f8]">
         <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-8 text-center sm:flex-row sm:text-left">
             <div class="flex items-center gap-3">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo BizFlow" class="h-8 w-8 rounded-lg">
                 <span class="text-lg font-extrabold text-slate-900">BizFlow</span>
             </div>
-            <p class="text-sm text-slate-600">Gérez votre PME de services avec plus de clarté.</p>
-            <a href="{{ route('register') }}" class="inline-flex items-center justify-center rounded-xl bg-[#0f172a] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800">Créer un compte</a>
+            <p class="text-sm text-slate-600">Clients, prestations, rendez-vous et paiements.</p>
+            <a href="{{ route('register') }}" class="inline-flex items-center justify-center rounded-lg bg-[#0f172a] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800">Créer un compte</a>
         </div>
     </footer>
 </body>
