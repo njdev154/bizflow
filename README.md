@@ -52,7 +52,7 @@ php artisan serve
 Ensuite, ouvrez l’application dans le navigateur sur :
 
 ```text
-http://localhost:8000
+http://localhost:8002
 ```
 
 ## Lancer le projet
@@ -92,6 +92,6 @@ php artisan test
 - `routes/web.php` : routes de l’application,
 - `tests/` : tests Laravel.
 
-## License
+## Licence
 
-Projet de démonstration / portfolio. À adapter selon les besoins de production.
+Ce projet est distribué sous licence MIT. Voir le fichier [LICENSE](./LICENSE).
