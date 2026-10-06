@@ -85,19 +85,32 @@
 
             <div class="grid gap-5 md:grid-cols-3">
                 <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-xl text-amber-700">⚡</div>
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
+                        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 2 4.5 13h6l-.5 9 9.5-12h-6L13 2Z" />
+                        </svg>
+                    </div>
                     <h3 class="mb-2 text-xl font-bold text-slate-900">Gain de temps immédiat</h3>
                     <p class="text-sm leading-6 text-slate-600">Trouvez les bons rendez-vous, suivez les paiements et évitez le travail manuel inutile.</p>
                 </div>
 
                 <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-xl text-sky-700">📊</div>
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
+                        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 19V9m5 10V5m5 14v-7m5 7V3M2 19h20" />
+                        </svg>
+                    </div>
                     <h3 class="mb-2 text-xl font-bold text-slate-900">Vue d’ensemble fiable</h3>
                     <p class="text-sm leading-6 text-slate-600">Le tableau de bord centralise le chiffre d’affaires, les clients actifs et le suivi quotidien.</p>
                 </div>
 
                 <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-xl text-emerald-700">✅</div>
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
+                        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.7 3.2 7.8 7.5 9.5 4.3-1.7 7.5-4.8 7.5-9.5V6L12 3Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.5 12 2.2 2.2 4.8-4.8" />
+                        </svg>
+                    </div>
                     <h3 class="mb-2 text-xl font-bold text-slate-900">Moins d’erreurs</h3>
                     <p class="text-sm leading-6 text-slate-600">Les conflits de créneau, les rapports et les données de paiement sont mieux sécurisés et plus lisibles.</p>
                 </div>
@@ -113,13 +126,27 @@
 
                 <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
                     @foreach([
-                        ['title' => 'Clients', 'text' => 'Centralisez les profils, les contacts, les notes et l’historique de chaque client.', 'icon' => '👥'],
-                        ['title' => 'Rendez-vous', 'text' => 'Planifiez les créneaux, vérifiez les conflits et suivez le statut de chaque prise en charge.', 'icon' => '📅'],
-                        ['title' => 'Paiements', 'text' => 'Enregistrez les transactions et suivez les revenus par jour, statut et méthode.', 'icon' => '💳'],
-                        ['title' => 'Rapports', 'text' => 'Consultez rapidement votre activité, la performance et les tendances de chiffre d’affaires.', 'icon' => '📈'],
+                        ['title' => 'Clients', 'text' => 'Centralisez les profils, les contacts, les notes et l’historique de chaque client.', 'icon' => 'users'],
+                        ['title' => 'Rendez-vous', 'text' => 'Planifiez les créneaux, vérifiez les conflits et suivez le statut de chaque prise en charge.', 'icon' => 'calendar'],
+                        ['title' => 'Paiements', 'text' => 'Enregistrez les transactions et suivez les revenus par jour, statut et méthode.', 'icon' => 'payment'],
+                        ['title' => 'Rapports', 'text' => 'Consultez rapidement votre activité, la performance et les tendances de chiffre d’affaires.', 'icon' => 'chart'],
                     ] as $feature)
                         <article class="feature-card rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                            <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white text-2xl shadow-sm">{{ $feature['icon'] }}</div>
+                            <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white text-slate-700 shadow-sm">
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                                    @if ($feature['icon'] === 'users')
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m6-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6-7.5a4 4 0 0 1 0 7.8M20 15a4 4 0 0 1 2 3.5V21" />
+                                    @elseif ($feature['icon'] === 'calendar')
+                                        <rect x="3" y="5" width="18" height="16" rx="2" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 3v4M8 3v4M3 10h18m-13 4h2m3 0h2m-7 3h2" />
+                                    @elseif ($feature['icon'] === 'payment')
+                                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2 10h20m-15 5h4" />
+                                    @else
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 19V9m5 10V5m5 14v-7m5 7V3M2 19h20" />
+                                    @endif
+                                </svg>
+                            </div>
                             <h3 class="mb-2 text-xl font-bold text-slate-900">{{ $feature['title'] }}</h3>
                             <p class="text-sm leading-6 text-slate-600">{{ $feature['text'] }}</p>
                         </article>

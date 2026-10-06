@@ -1,0 +1,13 @@
+ README.md                                          |  110 [32m+[m[31m-[m
+ ...836_add_missing_columns_to_audit_logs_table.php |   51 [32m+[m[31m-[m
+ journal.md                                         |    9 [32m+[m
+ package-lock.json                                  | 1251 [32m+[m[31m-------------------[m
+ package.json                                       |    5 [32m+[m[31m-[m
+ postcss.config.js                                  |    6 [31m-[m
+ public/images/bizflow-dashboard-preview.svg        |   51 [32m+[m
+ resources/css/app.css                              |   97 [32m+[m[31m-[m
+ resources/views/welcome.blade.php                  |  258 [32m++[m[31m--[m
+ tailwind.config.js                                 |   35 [31m-[m
+ tests/TestCase.php                                 |    7 [32m+[m[31m-[m
+ vite.config.js                                     |    2 [32m+[m
+ 12 files changed, 452 insertions(+), 1430 deletions(-)
