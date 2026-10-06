@@ -94,4 +94,4 @@ php artisan test
 
 ## Licence
 
-Ce projet est distribué sous licence MIT. Voir le fichier [LICENSE](./LICENSE).
+Aucune licence de réutilisation n’est définie pour le moment. Ce dépôt est publié à titre de présentation.
