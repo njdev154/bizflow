@@ -73,10 +73,6 @@ npm run dev
 php artisan test
 ```
 
-## Aperçu visuel
-
-![Dashboard BizFlow](./public/images/bizflow-dashboard-preview.svg)
-
 ## Roadmap / améliorations futures
 
 - ajout d’un planning hebdomadaire plus visuel,
@@ -99,4 +95,3 @@ php artisan test
 ## License
 
 Projet de démonstration / portfolio. À adapter selon les besoins de production.
-

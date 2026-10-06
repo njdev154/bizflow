@@ -4,9 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
+        <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">
+        <meta name="theme-color" content="#0B1F3A">
 
-        <title>{{ config('app.name', 'BizFlow') }}</title>
+        <title>BizFlow — Connexion à votre espace</title>
 
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -39,7 +40,7 @@
                         {{ $aside }}
                     @else
                         <h2 class="text-2xl font-bold mb-4">Plus qu'un outil, un partenaire pour votre croissance.</h2>
-                        <p class="text-white/70">BizFlow accompagne déjà plus de 2000 entreprises de services dans la gestion simple de leur activité au quotidien.</p>
+                        <p class="text-white/70">Retrouvez au même endroit vos clients, vos rendez-vous, vos services et le suivi de vos paiements.</p>
                     @endisset
                 </div>
             </div>

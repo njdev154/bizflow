@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="BizFlow aide les entreprises de services à gérer leurs clients, rendez-vous, paiements et activité commerciale en un seul tableau de bord.">
-    <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
-    <title>{{ config('app.name', 'BizFlow') }} — Gestion simple pour les entreprises de services</title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">
+    <meta name="theme-color" content="#0B1F3A">
+    <title>BizFlow — Gestion simple pour les entreprises de services</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800&display=swap" rel="stylesheet" />
@@ -36,7 +37,7 @@
 
     <main id="accueil" class="overflow-hidden">
         <section class="hero-glow relative border-b border-slate-200 bg-[#0b1f3a] text-white">
-            <div class="mx-auto grid max-w-7xl items-center gap-10 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr]">
+            <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr]">
                 <div>
                     <span class="brand-pill mb-6">Gestion • Rendez-vous • Paiements</span>
                     <h1 class="max-w-xl text-4xl font-extrabold leading-tight sm:text-5xl">
@@ -55,24 +56,49 @@
                         </a>
                     </div>
 
-                    <div class="mt-10 flex flex-wrap items-center gap-6 text-sm text-slate-200">
-                        <div>
-                            <span class="block text-3xl font-extrabold text-white">+2k</span>
-                            <span>entreprises engagées</span>
-                        </div>
-                        <div>
-                            <span class="block text-3xl font-extrabold text-white">15 min</span>
-                            <span>pour prendre le contrôle</span>
-                        </div>
-                        <div>
-                            <span class="block text-3xl font-extrabold text-white">24/7</span>
-                            <span>suivi de l’activité</span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="preview-card relative overflow-hidden rounded-[28px] p-4">
-                    <img src="{{ asset('images/bizflow-dashboard-preview.svg') }}" alt="Aperçu du tableau de bord BizFlow" class="w-full rounded-[20px] object-cover">
+                <div class="relative border-l border-white/15 py-3 pl-6 sm:pl-9">
+                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">Dans votre espace BizFlow</p>
+                    <h2 class="mt-3 text-2xl font-bold text-white">Les outils essentiels de votre activité, réunis au même endroit.</h2>
+
+                    <ul class="mt-7 divide-y divide-white/10">
+                        <li class="flex items-center gap-4 py-4">
+                            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-amber-300">
+                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m6-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6-7.5a4 4 0 0 1 0 7.8M20 15a4 4 0 0 1 2 3.5V21" />
+                                </svg>
+                            </span>
+                            <span>
+                                <span class="block font-semibold text-white">Clients</span>
+                                <span class="mt-1 block text-sm text-slate-300">Contacts et informations centralisés</span>
+                            </span>
+                        </li>
+                        <li class="flex items-center gap-4 py-4">
+                            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-amber-300">
+                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                                    <rect x="3" y="5" width="18" height="16" rx="2" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 3v4M8 3v4M3 10h18m-13 4h2m3 0h2" />
+                                </svg>
+                            </span>
+                            <span>
+                                <span class="block font-semibold text-white">Rendez-vous</span>
+                                <span class="mt-1 block text-sm text-slate-300">Créneaux et suivi des statuts</span>
+                            </span>
+                        </li>
+                        <li class="flex items-center gap-4 py-4">
+                            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-amber-300">
+                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                                    <rect x="2" y="5" width="20" height="14" rx="2" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2 10h20m-15 5h4" />
+                                </svg>
+                            </span>
+                            <span>
+                                <span class="block font-semibold text-white">Services et paiements</span>
+                                <span class="mt-1 block text-sm text-slate-300">Prestations, recettes et activité</span>
+                            </span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
